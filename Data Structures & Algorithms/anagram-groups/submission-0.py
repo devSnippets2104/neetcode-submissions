@@ -1,0 +1,18 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        result={}
+        final_list=[]
+
+        for word in strs:
+            key="".join(sorted(word))
+
+            if key in result:
+                result[key].append(word)
+            else:
+                result[key]=[word]
+        
+        for key,value in result.items():
+            final_list.append(value)
+        return final_list
+
+        
